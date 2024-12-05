@@ -1,0 +1,29 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        
+        Console.Write("Digite a primeira data (dd/mm/aaaa): ");
+        DateTime data1;
+        while (!DateTime.TryParse(Console.ReadLine(), out data1))
+        {
+            Console.Write("Data invalida. Digite novamente (dd/mm/aaaa): ");
+        }
+
+        
+        Console.Write("Digite a segunda data (dd/mm/aaaa): ");
+        DateTime data2;
+        while (!DateTime.TryParse(Console.ReadLine(), out data2))
+        {
+            Console.Write("Data invalida. Digite novamente (dd/mm/aaaa): ");
+        }
+
+       
+        TimeSpan diferenca = data2 - data1;
+
+        
+        Console.WriteLine($"A diferença entre as datas é de {Math.Abs(diferenca.Days)} dia(s).");
+    }
+}

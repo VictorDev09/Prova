@@ -1,0 +1,16 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        
+        Console.Write("Digite uma frase: ");
+        string frase = Console.ReadLine();
+
+        string[] palavras = frase.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+        
+        Console.WriteLine($"A frase contém {palavras.Length} palavra(s).");
+    }
+}

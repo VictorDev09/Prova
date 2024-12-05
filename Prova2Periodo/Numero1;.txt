@@ -1,0 +1,30 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Solicita ao usuário um valor inteiro
+        Console.Write("Digite um valor inteiro: ");
+        int valor = int.Parse(Console.ReadLine());
+
+       
+        if (valor <= 0 || valor >= 1000000)
+        {
+            Console.WriteLine("Valor fora do intervalo permitido (0 < N < 1000000).");
+            return;
+        }
+
+               Console.WriteLine(valor);
+
+               int[] notas = { 100, 50, 20, 10, 5, 2, 1 };
+
+        
+        foreach (int nota in notas)
+        {
+            int quantidade = valor / nota;            
+             valor %= nota; 
+            Console.WriteLine($"{quantidade} nota(s) de R$ {nota},00");
+        }
+    }
+}
